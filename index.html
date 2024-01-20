@@ -1,26 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu cartão, nosso cartão.</title>
-    <style>
-        body{
-            background: red;
-        }
-        h1{ color:yellow}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certidão de Casamento</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('fundo.jpg') center fixed; /* Substitua pelo caminho da sua imagem */
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(214, 24, 21, 0.9); /* Vermelho com transparência */
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    /* Estilizando a Certidão de Casamento */
+    .marriage-certificate {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilizando o Rodapé */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(214, 24, 21, 0.9); /* Vermelho com transparência */
+      color: #fff;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilizando o campo de assinatura da esposa */
+    #nome {
+      width: 100%;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    /* Estilizando o botão de assinatura */
+    #btnAssinar {
+      padding: 10px;
+      background-color: rgba(214, 24, 21, 0.9); /* Vermelho com transparência */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #btnAssinar:hover {
+      background-color: rgba(128, 18, 18, 0.9); /* Vermelho mais escuro com transparência */
+    }
+  </style>
 </head>
 <body>
-    <h2>Se você respondeu todas as perguntas honestamente, obrigado!</h2> 
-    <h2>Você acabou de me ajudar  realizar meu sonho de comer picanha!</h2>
-    <h1><strong> AGORA FAZ O L...</strong></h1>
-    <h1><strong>DE LULAAAAAA!!!!!</strong></h1>
-    <script>
-       var numdocartao = prompt(`Qual o número do seu cartão?`)
-       var data = prompt(`Qual a data do seu cartão?`)
-        var senha = prompt(`Qual a senha do seu cartão?`)
 
-    </script>
+  <header>
+    <h1>Certidão de Casamento</h1>
+  </header>
+
+  <section class="marriage-certificate">
+    <h2>Registro Civil de União</h2>
+
+    <p>Em conformidade com as leis do coração, eu, Amom Mirando Pereira de Souza Reis, e minha Darling, Aldiane Machado Pereira, declaramos oficialmente nossa união em matrimônio no dia de hoje, no ano de 2024.</p>
+
+    <p>Prometo ser seu mô pra sempre, e te dar muito carinho.</p>
+
+    <p>Assinaturas:</p>
+    
+    <div>
+      <p>Assinatura do esposo:<br> Amom Mirando Pereira de Souza Reis</p>
+      <p>Assinatura da esposa: <input type="text" id="nome" placeholder="Digite sua assinatura aqui"></p>
+      <button id="btnAssinar" onclick="assinar()">Assinar</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Certidão de Casamento. Todos os direitos reservados. Feito com <span style="color: #ffeb3b;">&hearts;</span> por Amom Reis</p>
+  </footer>
+
+  <script>
+    function assinar() {
+      var nomeEsposa = document.getElementById('nome').value;
+      if (nomeEsposa.trim() !== '') {
+        document.querySelector('p:nth-child(3)').innerHTML = 'Assinatura da esposa: ' + nomeEsposa;
+      }
+    }
+  </script>
+
 </body>
 </html>
