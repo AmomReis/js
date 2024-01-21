@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certidão de Casamento</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('fundo.jpg') center fixed; /* Substitua pelo caminho da sua imagem */
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(214, 24, 21, 0.9); /* Vermelho com transparência */
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    /* Estilizando a Certidão de Casamento */
+    .marriage-certificate {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilizando o Rodapé */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(214, 24, 21, 0.9); /* Vermelho com transparência */
+      color: #fff;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilizando o campo de assinatura da esposa */
+    #nome {
+      width: 100%;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    /* Estilizando o botão de assinatura */
+    #btnAssinar {
+      padding: 10px;
+      background-color: rgba(214, 24, 21, 0.9); /* Vermelho com transparência */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #btnAssinar:hover {
+      background-color: rgba(128, 18, 18, 0.9); /* Vermelho mais escuro com transparência */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Certidão de Casamento</h1>
+  </header>
+
+  <section class="marriage-certificate">
+    <h2>Registro Civil de União</h2>
+
+    <p>Em conformidade com as leis do coração, eu, Amom Mirando Pereira de Souza Reis, e minha Darling, Aldiane Machado Pereira, declaramos oficialmente nossa união em matrimônio no dia de hoje, no ano de 2024.</p>
+
+    <p>Eu prometo cuidar de você em todas as situações como se você fosse uma nenêzinha que precisa de todo o cuidado e atenção. Então cuide deu como se eu fosse oto nenêzinho, me dando muito pepeto. Ruwww</p>
+
+    <p><strong>Assinaturas:</strong></p>
+    
+    <div>
+      <p><strong>Assinatura do esposo:</strong><br> Amom Mirando Pereira de Souza Reis</p>
+      <p><strong>Assinatura da esposa:</strong> <input type="text" id="nome" placeholder="Digite sua assinatura aqui"></p>
+      <button id="btnAssinar" onclick="assinar()">Assinar</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Certidão de Casamento. Todos os direitos reservados. Feito com <span style="color: #ffeb3b;">&hearts;</span> por Amom Reis</p>
+  </footer>
+
+  <script>
+    function assinar() {
+      var nomeEsposa = document.getElementById('nome').value;
+      if (nomeEsposa.trim() !== '') {
+        // Obtendo o valor do último input
+        var valorInput = document.querySelector('input:last-child').value;
+
+        // Criando um novo elemento <p>
+        var novoParagrafo = document.createElement('p');
+
+        // Definindo o conteúdo do novo parágrafo
+        novoParagrafo.textContent = valorInput;
+
+        // Obtendo o pai do último input
+        var paiInput = document.querySelector('input:last-child').parentNode;
+
+        // Substituindo o último input pelo novo parágrafo
+        paiInput.replaceChild(novoParagrafo, document.querySelector('input:last-child'));
+
+      }
+    }
+  </script>
+
+</body>
+</html>
